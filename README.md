@@ -1,9 +1,9 @@
 <img src="https://github.com/SpoofDPIApp/SpoofDPI-App/raw/main/Other/Readme/Logo.png" width="110" height="110"/>
 
 # SpoofDPI App
-⬇️ [Скачать бесплатно](https://github.com/SpoofDPIApp/SpoofDPI-App/releases)
+⬇️ [Скачать бесплатно](https://github.com/SpoofDPIApp/SpoofDPI-App/releases/latest/download/SpoofDPI.App.zip)
 
-Простое в использовании приложение для Mac, благодаря которому YouTube снова заработает отлично! Реализовано на основе библиотеки [SpoofDPI](https://github.com/xvzc/SpoofDPI) — спасибо большое её автору.
+Простое в использовании приложение **для Mac**, благодаря которому **YouTube** снова заработает отлично! Реализовано на основе библиотеки [SpoofDPI](https://github.com/xvzc/SpoofDPI) — спасибо большое её автору.
 
 ## Как установить
 1. Скачайте архив с последней версией приложения по ссылке выше
