@@ -33,7 +33,7 @@
 ## Системные требования
 
 - Чип Apple Silicon или процессор Intel
-- macOS 13 Ventura или новее
+- macOS 14 Sonoma или новее
 
 ## Заключение
 
