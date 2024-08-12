@@ -45,7 +45,16 @@ final class MenuBarIconService {
         }
         
         isProtectionActiveObservation = protectionService.$isActive.sink { [correspondingItem] in
-            correspondingItem.button?.image = $0 ? SystemSymbol.sunglassesFill : SystemSymbol.sunglasses
+            let image: NSImage
+            
+            if #available(macOS 14, *) {
+                image = $0 ? SystemSymbol.sunglassesFill : SystemSymbol.sunglasses
+            } else {
+                let imageResources = ImageResource.MenuBarIcon.self
+                image = .init(resource: $0 ? imageResources.filled : imageResources.regular)
+            }
+            
+            correspondingItem.button?.image = image
         }
     }
     
