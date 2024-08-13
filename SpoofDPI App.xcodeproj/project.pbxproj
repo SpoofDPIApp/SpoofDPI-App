@@ -30,6 +30,8 @@
 		57A4209D2C62886200639250 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57A4209C2C62886200639250 /* FirebaseAnalytics */; };
 		57A4209F2C62886200639250 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57A4209E2C62886200639250 /* FirebaseCrashlytics */; };
 		57A420A12C6288E000639250 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A420A02C6288E000639250 /* UpdateService.swift */; };
+		57D9BC042C6BA1EE003EEDC0 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9BC032C6BA1EE003EEDC0 /* Configurable.swift */; };
+		57D9BC062C6BA23A003EEDC0 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9BC052C6BA23A003EEDC0 /* NSObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		57A420932C624D1D00639250 /* spoof-dpi-x64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "spoof-dpi-x64"; sourceTree = "<group>"; };
 		57A420992C6259D900639250 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		57A420A02C6288E000639250 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		57D9BC032C6BA1EE003EEDC0 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		57D9BC052C6BA23A003EEDC0 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			children = (
 				57A420572C60DEB700639250 /* Extensions */,
 				57A4208F2C62476A00639250 /* Services */,
+				57D9BC032C6BA1EE003EEDC0 /* Configurable.swift */,
 				57A420902C62477900639250 /* Utils.swift */,
 			);
 			path = Framework;
@@ -138,6 +143,7 @@
 				57A420992C6259D900639250 /* Bundle.swift */,
 				57A4205D2C60DF4000639250 /* Locale.swift */,
 				57A420582C60DEC400639250 /* ProcessInfo.swift */,
+				57D9BC052C6BA23A003EEDC0 /* NSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 			files = (
 				57A420522C60DE8900639250 /* LocalizedString.swift in Sources */,
 				57A4209A2C6259D900639250 /* Bundle.swift in Sources */,
+				57D9BC042C6BA1EE003EEDC0 /* Configurable.swift in Sources */,
+				57D9BC062C6BA23A003EEDC0 /* NSObject.swift in Sources */,
 				57A420A12C6288E000639250 /* UpdateService.swift in Sources */,
 				57A420592C60DEC400639250 /* ProcessInfo.swift in Sources */,
 				57A420502C60DE3B00639250 /* SystemSymbol.swift in Sources */,
@@ -393,7 +401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -403,7 +411,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -419,7 +427,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -429,7 +437,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;

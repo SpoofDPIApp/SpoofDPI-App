@@ -28,8 +28,10 @@ final class UpdateService: ObservableObject {
                 return
             }
             
-            settingsService.latestKnownActualBuildNumber = actualBuildNumber
-            updateState()
+            DispatchQueue.main.async {
+                self.settingsService.latestKnownActualBuildNumber = actualBuildNumber
+                self.updateState()
+            }
         }
     }
     

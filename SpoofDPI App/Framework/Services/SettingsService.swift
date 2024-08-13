@@ -10,6 +10,14 @@ final class SettingsService: ObservableObject {
     
     private init() { }
     
+    @AppStorage("isProtectionEnabled") private static var isProtectionEnabled = true
+    
+    @Published var isProtectionEnabled = isProtectionEnabled {
+        didSet {
+            Self.isProtectionEnabled = isProtectionEnabled
+        }
+    }
+    
     @AppStorage("isAutomaticLaunchEnabled") private static var isAutomaticLaunchEnabled = true
     
     @Published var isAutomaticLaunchEnabled = isAutomaticLaunchEnabled {

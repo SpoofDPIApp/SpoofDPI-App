@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct MainScene: Scene {
-    typealias LocalizedString = SpoofDPI_App.LocalizedString.Scene.Main
+    private typealias LocalizedString = SpoofDPI_App.LocalizedString.Scene.Main
     
     @Environment(\.openWindow) private var openWindow
     
@@ -76,14 +76,10 @@ struct MainScene: Scene {
                 creditsAttributedString.append($0)
             }
         
-        var options: [NSApplication.AboutPanelOptionKey: Any] = [
-            .credits: creditsAttributedString
-        ]
-        
-        if let buildNumber = Bundle.main.buildNumber, buildNumber < 2 {
-            options[.version] = ""
-        }
-        
-        NSApplication.shared.orderFrontStandardAboutPanel(options: options)
+        NSApplication.shared.orderFrontStandardAboutPanel(
+            options: [
+                .credits: creditsAttributedString
+            ]
+        )
     }
 }

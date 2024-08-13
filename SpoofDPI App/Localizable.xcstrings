@@ -18,6 +18,23 @@
         }
       }
     },
+    "MenuBarIcon.ProtectionToggle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI protection"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Защита от DPI"
+          }
+        }
+      }
+    },
     "MenuBarIcon.QuitButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -86,19 +103,36 @@
         }
       }
     },
+    "Scene.Main.ProtectionToggle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI protection"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Защита от DPI"
+          }
+        }
+      }
+    },
     "Scene.Main.Status.Active" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DPI protection is active!"
+            "value" : "Active!"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Защита от DPI активна!"
+            "value" : "Активно!"
           }
         }
       }

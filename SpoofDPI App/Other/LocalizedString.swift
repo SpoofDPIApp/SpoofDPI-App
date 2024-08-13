@@ -17,6 +17,7 @@ enum LocalizedString {
                 static let repositoryButton = String(localized: "Scene.Main.MenuBar.RepositoryButton")
             }
             
+            static let protectionToggle = String(localized: "Scene.Main.ProtectionToggle")
             static let updateButton = String(localized: "Scene.Main.UpdateButton")
             
             enum Status {
@@ -38,6 +39,8 @@ enum LocalizedString {
     }
     
     enum MenuBarIcon {
+        static let protectionToggle = String(localized: "MenuBarIcon.ProtectionToggle")
+        
         static func openButton(appName: String) -> String {
             let template = String(localized: "MenuBarIcon.OpenButton.Template")
             return .init(format: template, appName)

@@ -7,7 +7,7 @@ import SwiftUI
 
 extension MainScene {
     struct ContentView: View {
-        typealias LocalizedString = SpoofDPI_App.LocalizedString.Scene.Main
+        private typealias LocalizedString = SpoofDPI_App.LocalizedString.Scene.Main
         
         @ObservedObject private var protectionService = ProtectionService.instance
         @ObservedObject private var settingsService = SettingsService.instance
@@ -21,25 +21,34 @@ extension MainScene {
                     }
                 }
                 
-                if protectionService.isActive {
-                    HStack(spacing: 6) {
-                        Text("😎")
-                        
-                        Text(LocalizedString.Status.active)
-                            .bold()
-                    }
-                } else {
-                    VStack(spacing: 8) {
+                Toggle(LocalizedString.protectionToggle, isOn: $settingsService.isProtectionEnabled)
+                    .toggleStyle(.switch)
+                
+                switch protectionService.status {
+                    case .active:
                         HStack(spacing: 6) {
-                            ProgressView()
-                                .controlSize(.small)
+                            Text("😎")
                             
-                            Text(LocalizedString.Status.initialization)
+                            Text(LocalizedString.Status.active)
+                                .bold()
+                        }
+                        .padding(.top, -8)
+                        
+                    case .initializing:
+                        VStack(spacing: 8) {
+                            HStack(spacing: 6) {
+                                ProgressView()
+                                    .controlSize(.small)
+                                
+                                Text(LocalizedString.Status.initialization)
+                            }
+                            
+                            Text(LocalizedString.vpnHint)
+                                .bold()
                         }
                         
-                        Text(LocalizedString.vpnHint)
-                            .bold()
-                    }
+                    case .stopped, .unknown:
+                        EmptyView()
                 }
                 
                 VStack {

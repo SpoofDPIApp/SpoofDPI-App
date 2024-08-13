@@ -13,11 +13,11 @@ final class Utils {
             return nil
         }
         
-        let process = Process()
-        
-        process.arguments = ["-c", command]
-        process.currentDirectoryPath = "~/"
-        process.launchPath = "/bin/sh"
+        let process = Process().with {
+            $0.arguments = ["-c", command]
+            $0.currentDirectoryPath = "~/"
+            $0.launchPath = "/bin/sh"
+        }
         
         let pipe = Pipe()
         process.standardOutput = pipe

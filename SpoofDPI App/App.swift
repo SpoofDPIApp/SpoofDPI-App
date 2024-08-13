@@ -16,7 +16,7 @@ struct App: SwiftUI.App {
     }
 }
 
-extension App {
+private extension App {
     final class Delegate: NSObject, NSApplicationDelegate {
         func applicationDidFinishLaunching(_ notification: Notification) {
             configureFirebase()
