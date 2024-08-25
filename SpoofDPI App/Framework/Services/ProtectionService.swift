@@ -82,13 +82,21 @@ final class ProtectionService: ObservableObject {
             let path = Bundle.main.path(
                 forResource: Constants.libraryProcessNamePrefix + deviceArchitecture.rawValue,
                 ofType: ""
-            )
-        else {
+            ) else {
             return
+        }
+        var command = "\"" + path + "\""
+        
+        if settingsService.isDnsOverHttpsEnabled {
+            command += " -enable-doh"
+        }
+        
+        if !settingsService.dnsServerAddress.isEmpty {
+            command += " --dns-addr " + settingsService.dnsServerAddress
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            Utils.executeTerminalCommand("\"" + path + "\"")
+            Utils.executeTerminalCommand(command)
         }
     }
     

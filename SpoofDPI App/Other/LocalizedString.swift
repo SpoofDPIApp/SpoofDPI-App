@@ -20,6 +20,9 @@ enum LocalizedString {
             static let protectionToggle = String(localized: "Scene.Main.ProtectionToggle")
             static let updateButton = String(localized: "Scene.Main.UpdateButton")
             
+            static let dnsOverHttpsEnable = String(localized: "Scene.Main.DnsOverHttpsEnable")
+            static let dnsServerAddress = String(localized: "Scene.Main.DnsServerAddress")
+            
             enum Status {
                 static let initialization = String(localized: "Scene.Main.Status.Initialization")
                 static let active = String(localized: "Scene.Main.Status.Active")

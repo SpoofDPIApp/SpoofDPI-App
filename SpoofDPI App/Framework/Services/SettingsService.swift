@@ -33,6 +33,22 @@ final class SettingsService: ObservableObject {
             Self.isMenuBarIconEnabled = isMenuBarIconEnabled
         }
     }
+
+    @AppStorage("isDnsOverHttpsEnabled") private static var isDnsOverHttpsEnabled = false
     
+    @Published var isDnsOverHttpsEnabled = isDnsOverHttpsEnabled {
+        didSet {
+            Self.isDnsOverHttpsEnabled = isDnsOverHttpsEnabled
+        }
+    }
+    
+    @AppStorage("dnsServerAddress") private static var dnsServerAddress = ""
+    
+    @Published var dnsServerAddress = dnsServerAddress {
+        didSet {
+            Self.dnsServerAddress = dnsServerAddress
+        }
+    }
+
     @AppStorage("latestKnownActualBuildNumber") var latestKnownActualBuildNumber = 0
 }

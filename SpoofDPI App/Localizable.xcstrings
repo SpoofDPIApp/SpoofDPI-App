@@ -205,6 +205,40 @@
         }
       }
     },
+    "Scene.Main.DnsOverHttpsEnable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable DNS over HTTPS"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включить DNS через HTTPS"
+          }
+        }
+      }
+    },
+    "Scene.Main.DnsServerAddress" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DNS Server Address"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Адрес DNS-сервера"
+          }
+        }
+      }
+    },
     "Scene.Main.VPNHint" : {
       "extractionState" : "manual",
       "localizations" : {

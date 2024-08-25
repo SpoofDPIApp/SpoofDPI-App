@@ -52,6 +52,14 @@ extension MainScene {
                 }
                 
                 VStack {
+                    Toggle(
+                        LocalizedString.dnsOverHttpsEnable,
+                        isOn: $settingsService.isDnsOverHttpsEnabled
+                    )
+                    TextField(
+                        LocalizedString.dnsServerAddress,
+                        text: $settingsService.dnsServerAddress
+                    )
                     Toggle(LocalizedString.Toggles.automaticLaunch, isOn: $settingsService.isAutomaticLaunchEnabled)
                     Toggle(LocalizedString.Toggles.menuBarIcon, isOn: $settingsService.isMenuBarIconEnabled)
                 }
