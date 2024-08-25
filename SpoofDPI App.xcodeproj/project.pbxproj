@@ -130,7 +130,7 @@
 		57A4204E2C60DE3200639250 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				57A420962C624DC800639250 /* Binaries (0.10.6) */,
+				57A420962C624DC800639250 /* Binaries (0.10.10) */,
 				57A420512C60DE8900639250 /* LocalizedString.swift */,
 				57A4204F2C60DE3B00639250 /* SystemSymbol.swift */,
 			);
@@ -161,13 +161,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		57A420962C624DC800639250 /* Binaries (0.10.6) */ = {
+		57A420962C624DC800639250 /* Binaries (0.10.10) */ = {
 			isa = PBXGroup;
 			children = (
 				57A420922C624D1D00639250 /* spoof-dpi-arm */,
 				57A420932C624D1D00639250 /* spoof-dpi-x64 */,
 			);
-			path = "Binaries (0.10.6)";
+			path = "Binaries (0.10.10)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,7 +401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -411,7 +411,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -427,7 +427,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -437,7 +437,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -474,7 +474,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = exactVersion;
-				version = 11.0.0;
+				version = 11.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

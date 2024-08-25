@@ -15,6 +15,8 @@ final class ProtectionService: ObservableObject {
     private let fileManager = FileManager.default
     
     private var isEnabledObservation: AnyCancellable?
+    private var libraryParametersObservation: AnyCancellable?
+    
     private var libraryReactivationTimer: Timer?
     
     private init() {
@@ -29,10 +31,22 @@ final class ProtectionService: ObservableObject {
             
             if $0 {
                 if libraryReactivationTimer == nil {
-                    startLibraryMaintaining()
+                    restartLibraryMaintaining()
                 }
             } else {
                 stopLibrary()
+            }
+        }
+        
+        libraryParametersObservation = settingsService.$libraryParameters.sink { [weak self] _ in
+            guard let self else { return }
+            
+            switch status {
+                case .active, .initializing:
+                    restartLibraryMaintaining()
+                    
+                case .stopped, .unknown:
+                    break
             }
         }
     }
@@ -41,7 +55,7 @@ final class ProtectionService: ObservableObject {
         stopLibrary()
     }
     
-    private func startLibraryMaintaining() {
+    private func restartLibraryMaintaining() {
         let reactivateIfNeeded = { [weak self] in
             guard let self else {
                 return
@@ -88,7 +102,11 @@ final class ProtectionService: ObservableObject {
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            Utils.executeTerminalCommand("\"" + path + "\"")
+            let parameters = self.settingsService.libraryParameters
+            
+            Utils.executeTerminalCommand(
+                "\"\(path)\"" + (!parameters.isEmpty ? " " + parameters : "")
+            )
         }
     }
     

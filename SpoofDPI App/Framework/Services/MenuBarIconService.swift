@@ -62,7 +62,8 @@ final class MenuBarIconService {
             let isActive = $0 == .active
             
             if #available(macOS 14, *) {
-                image = isActive ? SystemSymbol.sunglassesFill : SystemSymbol.sunglasses
+                let systemSymbol: SystemSymbol = isActive ? .sunglassesFill : .sunglasses
+                image = systemSymbol.image
             } else {
                 let imageResources = ImageResource.MenuBarIcon.self
                 image = .init(resource: isActive ? imageResources.filled : imageResources.regular)

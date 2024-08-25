@@ -34,5 +34,13 @@ final class SettingsService: ObservableObject {
         }
     }
     
+    @AppStorage("libraryParameters") private static var libraryParameters = ""
+    
+    @Published var libraryParameters = libraryParameters {
+        didSet {
+            Self.libraryParameters = libraryParameters
+        }
+    }
+    
     @AppStorage("latestKnownActualBuildNumber") var latestKnownActualBuildNumber = 0
 }

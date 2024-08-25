@@ -13,6 +13,11 @@ extension MainScene {
         @ObservedObject private var settingsService = SettingsService.instance
         @ObservedObject private var updateService = UpdateService.instance
         
+        @State private var areSettingsVisible = false
+        
+        @State private var settingsLibraryParameters = ""
+        @State private var settingsLibraryParametersTextFieldID = 0
+        
         var body: some View {
             VStack(spacing: 14) {
                 if updateService.areUpdatesAvailable {
@@ -21,8 +26,47 @@ extension MainScene {
                     }
                 }
                 
-                Toggle(LocalizedString.protectionToggle, isOn: $settingsService.isProtectionEnabled)
-                    .toggleStyle(.switch)
+                HStack {
+                    let settingsSymbol = SystemSymbol.gearshape
+                    
+                    Toggle(LocalizedString.protectionToggle, isOn: $settingsService.isProtectionEnabled)
+                        .toggleStyle(.switch)
+                    
+                    Button("", systemImage: settingsSymbol.name) {
+                        settingsLibraryParameters = settingsService.libraryParameters
+                        areSettingsVisible = true
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom, 4)
+                    .alert("", isPresented: $areSettingsVisible) {
+                        let fixLibraryParametersTextFieldInitialStates = {
+                            // Fixes a mysterious SwiftUI bug
+                            settingsLibraryParametersTextFieldID += 1
+                        }
+                        
+                        TextField(
+                            LocalizedString.SettingsAlert.libraryParameters,
+                            text: $settingsLibraryParameters
+                        )
+                        .autocorrectionDisabled()
+                        .id(settingsLibraryParametersTextFieldID)
+                        
+                        Button(LocalizedString.SettingsAlert.Buttons.save) {
+                            settingsService.libraryParameters = settingsLibraryParameters
+                            
+                            areSettingsVisible = false
+                            fixLibraryParametersTextFieldInitialStates()
+                        }
+                        
+                        Button(LocalizedString.SettingsAlert.Buttons.cancel) {
+                            areSettingsVisible = false
+                            fixLibraryParametersTextFieldInitialStates()
+                        }
+                    }
+                    .dialogIcon(
+                        .init(nsImage: settingsSymbol.image)
+                    )
+                }
                 
                 switch protectionService.status {
                     case .active:

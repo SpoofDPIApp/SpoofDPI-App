@@ -6,13 +6,24 @@
 import AppKit
 
 enum SystemSymbol {
-    @available(macOS 14, *)
-    static var sunglasses: NSImage { createSystemSymbol(name: "sunglasses") }
+    case gearshape
     
-    @available(macOS 14, *)
-    static var sunglassesFill: NSImage { createSystemSymbol(name: "sunglasses.fill") }
+    @available(macOS 14, *) case sunglasses
+    @available(macOS 14, *) case sunglassesFill
     
-    private static func createSystemSymbol(name: String) -> NSImage {
+    var name: String {
+        switch self {
+            case .gearshape:
+                return "gearshape"
+                
+            case .sunglasses:
+                return "sunglasses"
+            case .sunglassesFill:
+                return "sunglasses.fill"
+        }
+    }
+    
+    var image: NSImage {
         return .init(systemSymbolName: name, accessibilityDescription: nil)!
     }
 }
