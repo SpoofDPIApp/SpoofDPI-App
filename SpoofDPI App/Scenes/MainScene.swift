@@ -29,8 +29,6 @@ struct MainScene: Scene {
                 }
             }
             
-            CommandGroup(replacing: .undoRedo) { }
-            CommandGroup(replacing: .pasteboard) { }
             CommandGroup(replacing: .windowSize) { }
             
             CommandGroup (replacing: .help) {

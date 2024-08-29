@@ -14,5 +14,5 @@ enum Constants {
     static let supportEmailAddress = "SpoofDPIApp@proton.me"
     static let supportEmailURL = URL(string: "mailto:" + supportEmailAddress)!
     
-    static let libraryProcessNamePrefix = "spoof-dpi-"
+    static let libraryProcessNamePrefix = "spoofdpi-"
 }

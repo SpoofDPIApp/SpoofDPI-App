@@ -24,8 +24,8 @@
 		57A420672C60FB3D00639250 /* ProtectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A420662C60FB3D00639250 /* ProtectionService.swift */; };
 		57A420702C6158B100639250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A4206F2C6158B100639250 /* GoogleService-Info.plist */; };
 		57A420912C62477900639250 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A420902C62477900639250 /* Utils.swift */; };
-		57A420942C624D1D00639250 /* spoof-dpi-arm in Resources */ = {isa = PBXBuildFile; fileRef = 57A420922C624D1D00639250 /* spoof-dpi-arm */; };
-		57A420952C624D1D00639250 /* spoof-dpi-x64 in Resources */ = {isa = PBXBuildFile; fileRef = 57A420932C624D1D00639250 /* spoof-dpi-x64 */; };
+		57A420942C624D1D00639250 /* spoofdpi-arm in Resources */ = {isa = PBXBuildFile; fileRef = 57A420922C624D1D00639250 /* spoofdpi-arm */; };
+		57A420952C624D1D00639250 /* spoofdpi-x64 in Resources */ = {isa = PBXBuildFile; fileRef = 57A420932C624D1D00639250 /* spoofdpi-x64 */; };
 		57A4209A2C6259D900639250 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A420992C6259D900639250 /* Bundle.swift */; };
 		57A4209D2C62886200639250 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57A4209C2C62886200639250 /* FirebaseAnalytics */; };
 		57A4209F2C62886200639250 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 57A4209E2C62886200639250 /* FirebaseCrashlytics */; };
@@ -54,8 +54,8 @@
 		57A420662C60FB3D00639250 /* ProtectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectionService.swift; sourceTree = "<group>"; };
 		57A4206F2C6158B100639250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57A420902C62477900639250 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		57A420922C624D1D00639250 /* spoof-dpi-arm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "spoof-dpi-arm"; sourceTree = "<group>"; };
-		57A420932C624D1D00639250 /* spoof-dpi-x64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "spoof-dpi-x64"; sourceTree = "<group>"; };
+		57A420922C624D1D00639250 /* spoofdpi-arm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "spoofdpi-arm"; sourceTree = "<group>"; };
+		57A420932C624D1D00639250 /* spoofdpi-x64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "spoofdpi-x64"; sourceTree = "<group>"; };
 		57A420992C6259D900639250 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		57A420A02C6288E000639250 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		57D9BC032C6BA1EE003EEDC0 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		57A4204E2C60DE3200639250 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				57A420962C624DC800639250 /* Binaries (0.10.10) */,
+				57A420962C624DC800639250 /* Binaries (0.11.1) */,
 				57A420512C60DE8900639250 /* LocalizedString.swift */,
 				57A4204F2C60DE3B00639250 /* SystemSymbol.swift */,
 			);
@@ -161,13 +161,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		57A420962C624DC800639250 /* Binaries (0.10.10) */ = {
+		57A420962C624DC800639250 /* Binaries (0.11.1) */ = {
 			isa = PBXGroup;
 			children = (
-				57A420922C624D1D00639250 /* spoof-dpi-arm */,
-				57A420932C624D1D00639250 /* spoof-dpi-x64 */,
+				57A420922C624D1D00639250 /* spoofdpi-arm */,
+				57A420932C624D1D00639250 /* spoofdpi-x64 */,
 			);
-			path = "Binaries (0.10.10)";
+			path = "Binaries (0.11.1)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +236,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A420942C624D1D00639250 /* spoof-dpi-arm in Resources */,
+				57A420942C624D1D00639250 /* spoofdpi-arm in Resources */,
 				57A420652C60EA4600639250 /* Localizable.xcstrings in Resources */,
-				57A420952C624D1D00639250 /* spoof-dpi-x64 in Resources */,
+				57A420952C624D1D00639250 /* spoofdpi-x64 in Resources */,
 				57A420392C60D98600639250 /* Assets.xcassets in Resources */,
 				57A420702C6158B100639250 /* GoogleService-Info.plist in Resources */,
 			);
@@ -401,7 +401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -411,7 +411,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -427,7 +427,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -437,7 +437,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SpoofDPI.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
