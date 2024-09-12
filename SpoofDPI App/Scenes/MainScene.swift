@@ -9,6 +9,7 @@ struct MainScene: Scene {
     private typealias LocalizedString = SpoofDPI_App.LocalizedString.Scene.Main
     
     @Environment(\.openWindow) private var openWindow
+    @ObservedObject private var updateService = UpdateService.instance
     
     private let id = String(describing: MainScene.self)
     
@@ -26,6 +27,10 @@ struct MainScene: Scene {
                     LocalizedString.MenuBar.aboutButton(appName: appName)
                 ) {
                     openAboutWindow()
+                }
+                
+                Button(LocalizedString.MenuBar.updatesButton) {
+                    updateService.checkAvailability()
                 }
             }
             
@@ -76,7 +81,8 @@ struct MainScene: Scene {
         
         NSApplication.shared.orderFrontStandardAboutPanel(
             options: [
-                .credits: creditsAttributedString
+                .credits: creditsAttributedString,
+                .version: Constants.libraryVersion
             ]
         )
     }

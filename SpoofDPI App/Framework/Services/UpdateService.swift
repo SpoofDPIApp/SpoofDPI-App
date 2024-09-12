@@ -3,25 +3,38 @@
 //  SpoofDPI App
 //
 
-import Foundation
+import AppKit
 
 final class UpdateService: ObservableObject {
     static let instance = UpdateService()
     
-    @Published private(set) var areUpdatesAvailable = false
-    
-    private let settingsService = SettingsService.instance
+    private lazy var settingsService = SettingsService.instance
+    private lazy var windowService = WindowService.instance
     
     private init() {
         guard !ProcessInfo.isPreview else {
             return
         }
         
-        updateState()
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + 1
+        ) {
+            self.checkAvailability()
+        }
         
-        DispatchQueue.global(qos: .utility).async { [weak self] in
+        let timer = Timer.scheduledTimer(
+            withTimeInterval: Constants.updatesCheckingFrequency,
+            repeats: true
+        ) { [weak self] _ in
+            self?.checkAvailability()
+        }
+        
+        RunLoop.main.add(timer, forMode: .common)
+    }
+    
+    func checkAvailability() {
+        DispatchQueue.global(qos: .utility).async {
             guard
-                let self,
                 let data = try? String(contentsOf: Constants.actualBuildNumberURL),
                 let actualBuildNumber = Int(data)
             else {
@@ -30,16 +43,39 @@ final class UpdateService: ObservableObject {
             
             DispatchQueue.main.async {
                 self.settingsService.latestKnownActualBuildNumber = actualBuildNumber
-                self.updateState()
+                self.showAlertIfNeeded()
             }
         }
     }
     
-    private func updateState() {
-        guard let currentBuildNumber = Bundle.main.buildNumber else {
+    private func showAlertIfNeeded() {
+        guard
+            let currentBuildNumber = Bundle.main.buildNumber,
+            currentBuildNumber < settingsService.latestKnownActualBuildNumber
+        else {
             return
         }
         
-        areUpdatesAvailable = currentBuildNumber < settingsService.latestKnownActualBuildNumber
+        windowService.isMainWindowVisible = true
+        
+        let alert = NSAlert().with {
+            typealias LocalizedString = SpoofDPI_App.LocalizedString.Updates.Alert
+            
+            $0.messageText = LocalizedString.title(appName: Bundle.main.name)
+            $0.informativeText = LocalizedString.description
+            
+            $0.addButton(withTitle: LocalizedString.Buttons.update)
+            $0.addButton(withTitle: LocalizedString.Buttons.close)
+            
+            $0.alertStyle = .warning
+        }
+        
+        switch alert.runModal() {
+            case .alertFirstButtonReturn:
+                NSWorkspace.shared.open(Constants.repositoryURL)
+                
+            default:
+                break
+        }
     }
 }

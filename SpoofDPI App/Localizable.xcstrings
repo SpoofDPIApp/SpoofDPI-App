@@ -103,6 +103,23 @@
         }
       }
     },
+    "Scene.Main.MenuBar.UpdatesButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check for Updates"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверить обновления"
+          }
+        }
+      }
+    },
     "Scene.Main.ProtectionToggle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -239,23 +256,6 @@
         }
       }
     },
-    "Scene.Main.UpdateButton" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⚠️ Update the app"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⚠️ Обновить приложение"
-          }
-        }
-      }
-    },
     "Scene.Main.VPNHint" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -269,6 +269,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Пожалуйста, выключите VPN"
+          }
+        }
+      }
+    },
+    "Updates.Alert.Buttons.Close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        }
+      }
+    },
+    "Updates.Alert.Buttons.Update" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновить"
+          }
+        }
+      }
+    },
+    "Updates.Alert.Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are using an outdated version of the app. It may work inefficiently."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы используете неактуальную версию приложения. Она может работать неэффективно."
+          }
+        }
+      }
+    },
+    "Updates.Alert.Title.Template" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновите %@"
           }
         }
       }

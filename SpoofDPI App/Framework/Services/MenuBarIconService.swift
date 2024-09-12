@@ -15,9 +15,9 @@ final class MenuBarIconService {
         withLength: NSStatusItem.squareLength
     )
     
-    private let protectionService = ProtectionService.instance
-    private let settingsService = SettingsService.instance
-    private let windowService = WindowService.instance
+    private lazy var protectionService = ProtectionService.instance
+    private lazy var settingsService = SettingsService.instance
+    private lazy var windowService = WindowService.instance
     
     private var isVisibleObservation: AnyCancellable?
     

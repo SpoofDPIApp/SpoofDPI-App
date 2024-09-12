@@ -9,8 +9,8 @@ import ServiceManagement
 final class AutoLaunchService {
     static let instance = AutoLaunchService()
     
-    private let settingsService = SettingsService.instance
-    private let windowService = WindowService.instance
+    private lazy var settingsService = SettingsService.instance
+    private lazy var windowService = WindowService.instance
     
     private var isEnabledObservation: AnyCancellable?
     

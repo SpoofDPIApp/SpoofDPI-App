@@ -11,7 +11,8 @@ final class ProtectionService: ObservableObject {
     
     @Published private(set) var status = Status.unknown
     
-    private let settingsService = SettingsService.instance
+    private lazy var settingsService = SettingsService.instance
+    
     private let fileManager = FileManager.default
     
     private var isEnabledObservation: AnyCancellable?

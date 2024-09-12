@@ -11,7 +11,6 @@ extension MainScene {
         
         @ObservedObject private var protectionService = ProtectionService.instance
         @ObservedObject private var settingsService = SettingsService.instance
-        @ObservedObject private var updateService = UpdateService.instance
         
         @State private var areSettingsVisible = false
         
@@ -20,12 +19,6 @@ extension MainScene {
         
         var body: some View {
             VStack(spacing: 14) {
-                if updateService.areUpdatesAvailable {
-                    Button(LocalizedString.updateButton) {
-                        NSWorkspace.shared.open(Constants.repositoryURL)
-                    }
-                }
-                
                 HStack {
                     let settingsSymbol = SystemSymbol.gearshape
                     
