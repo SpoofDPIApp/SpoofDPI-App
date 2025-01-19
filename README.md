@@ -1,5 +1,5 @@
 <img src="https://github.com/SpoofDPIApp/SpoofDPI-App/raw/main/Other/Readme/Logo.png" width="110" height="110"/>
-<img src="https://github.com/SpoofDPIApp/SpoofDPI-App/raw/main/Other/Readme/Screenshot.png" width="618" height="542"/>
+<img src="https://github.com/SpoofDPIApp/SpoofDPI-App/raw/main/Other/Readme/Screenshot.png" width="309" height="271"/>
 
 # SpoofDPI App
 ⬇️ [Скачать бесплатно](https://github.com/SpoofDPIApp/SpoofDPI-App/releases/latest/download/SpoofDPI.App.zip)
